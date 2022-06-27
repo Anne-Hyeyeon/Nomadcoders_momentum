@@ -1,0 +1,115 @@
+[4-1]
+- length: string의 길이 구하기.
+- input의 유효성 검사를 작동시키기 위해서는, input은 form 안에 있어야 한다.
+- form을 이용하면, 브라우저 자체의 기능을 이용할 수 있다. js코드 없이도.
+- 이때, button을 클릭하면 form이 submit 되고 있다.
+- 우리가 form 안에서 enter를 누르고, input이 더 존재하지 않는다면 자동으로 submit된다.
+- 따라서 form을 이용하면, click이 아닌 form을 submit하는 것에 대해 고민하면 된다.
+- form이 submit되는 걸 막으려면 어떻게 해야 할까?
+
+[4-2]
+- form을 submit할 때 value를 받아냄.
+- 새로고침은 form submit의 기본 동작. (브라우저가 그러도록 프로그래밍 되어 있음.)
+- 브라우저는 우선 onLoginAubmit function은 호출하고, 브라우저가 function을 실행시키지만 
+브라우저는 브라우저 내에서 정보를 받아낸 후 unction을 실행시키는 것이다.
+
+우리가 알고 있는 것 
+submit -> 브라우저가 function 실행
+onLoginAubmit();
+
+실제
+submit -> 브라우저가 정보 겟 -> (정보를 가진 채로) function 실행 
+onLoginAubmit({information});
+
+- 따라서, onsubmit시 브라우저는 argument를 받는다고 보면 된다. 
+
+- EventListner function의 첫번째 argumnet는 항상 지금 막 벌어진 일들에 대한 정보가 된다.
+
+- 우리는 space로, event에 대한 정보를 지닌 argument를 채워놓으면 된다.
+
+[4-3]
+js는 function 실행 전, 방금 전 실행된 event에 대한 정보를 가지게 된다.
+- 우리가 이걸 사용하고 싶다면, space (argument를 받는 공간)가 필요하다.
+- link를 입력하면, mouseevent가 뜨는데 user가 어디를 클릭했는지를 알려준다.
+- 기억해야 할 것 : addEventListner안의 함수는 직접 실행하지 않는다. 내가 아니라, 브라우저가 직접 해주는 거다!
+
+[4-4] Getting Username
+목표 : 상대방이 input submit을 하고 나면, 이름 입력창을 hidden이라는 classname을 붙여서 없앤다.
+
+-string만 있는 변수는 대문자로 하는 관습.
+- string이랑 변수 하나로 합치기 : `` 사용
+ex) `hello ${username}`;
+1) 변수와 string을 결합하고 싶거나, 변수를 string안에 집어넣고 싶으면, 위 방법을 쓰면 된다.
+2) 가장 중요한 규칙은 ``를 사용하는 것이다. ''도 아니고, ""도 아니다. (백틱)
+
+[4-5] Saving Username
+- localStorage를 이용하면 Browser에 무언가를 저장할 수 있다. 
+- 개발자도구를 이용해서 localStorage에 저장된 내용을 볼 수 있다.
+- localStorage API mdn 문서에서 보기!
+
+값 저장 : localStorage.setItem(key, value)
+값 불러오기 : localStorage.getItem(key)
+값 지우기 : localStorage.removeItem(key)
+
+[4-6] Loading Username
+- localStorage에 값이 있으면, form을 보여주면 안된다.
+localStorage의 유저 정보를 확인하는 법?
+
+[5-1] Intervals
+interval: '매번'일어나야 하는 무언가.
+ex) 매 2초마다 무언가를 일어나게 하고 싶을 때!
+- setInterval : 자바스크립트에 내장된 interval 기능
+인자 1 : function
+인자 2 : 시간
+
+[5-2] Timeouts and Dates
+- setTimeOut 얼마나 뒤에 실행시킬지를 정하는!
+인자 1 : function
+인자 2: 기다릴 시간
+
+- 시계 만들기 : Date object(js에 이미 정의되어있는)
+
+const date = New date();
+date.getHours();
+date.getFullYear();
+등이 있음.
+
+- 두 자리 초 (다음 영상)
+- 웹사이트가 로드되자마자 바로 clock 실행
+interval 앞 함수 바로 호출
+- MDN의 date 문서 참고하기
+
+[5-2 PadStart]
+- 시계의 string을 문자 두 개로 채우기
+- PadStart라는 기능으로 이미 만들어져 있음. 
+
+padstart()
+인자 1 : 자릿수
+인자 2 : 빈 자리에 붙여넣을 숫자
+string의 시작 부분을 늘려야하고, 길이가 2가 되어야한다고 알리는 기능.
+길이가 2가 되지 않을 경우 붙일 문자열도 추가!
+
+1) 시간, 분, 초 각각 변수로 선언
+2) 숫자를 스트링으로 변환
+3) padstart
+
+
+[5-3 Quotes]
+-Math.random 을 이용해서 랜덤 넘버를 뽑아보자!
+하지만 소수점까지 랜덤숫자가 나와버린다 ㅠ 
+- Math.random * 10 을 해주면 0~10사이의 숫자를 얻을 수 있지롱
+- 꼬리 떼기
+Integer가 아니라 float기 때문에 꼬리가 나온다. 
+이때는 Math.round를 사용해보자. (숫자에 반올림시키는 기능)
+Math.ceil은 숫자 올림해줌.
+Math.floor은 숫자 내림해줌.
+
+최종
+Math.floor(Math.random() *10)
+
+[5-4 Background]
+- js에서 이미지를 만든 후 html에 삽입
+- createElement 사용
+- src 정보 입력 
+- html의 body에 삽입 (js에만 존재하는 요소를)
+- appendChild 사용
