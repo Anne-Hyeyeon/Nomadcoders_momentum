@@ -113,3 +113,24 @@ Math.floor(Math.random() *10)
 - src 정보 입력 
 - html의 body에 삽입 (js에만 존재하는 요소를)
 - appendChild 사용
+
+[6-0 setup]
+자바스크립트는 막 발생한 이벤트를, 함수의 첫 번째 인자로 준다.
+
+[6-1 Adding To dos]
+인수 newTodo는 이름일 뿐이다! 받아오는 것에 대한 이름. potato가 되어도 동작함.
+ul 안에 li 만들기 : appendChild
+span 안에 값 넣기 : span.innterText = 
+
+[6-2 Deleting to Dos]
+- 버튼에 이벤트 리스너 넣기 (클릭)
+- 어떤 li를 지울지 정해줘야한다.
+- 각 li에서 발생하는click 이벤트 감지하기
+- deleteTodo에서 event 받아서 console.log 한 후, path 들어가면 이벤트 일어나는 경로를 알 수 있다.
+- event.target property으로 어떤 target을 눌렀는지 알 수 있다.
+- parentNode, parentElement : 버튼의 부모는 누구인지 알 수 있다.
+event.target.~
+target이란, 클릭된 HTML element를 뜻한다.
+이름.remove();
+
+[6-3 Saving To Dos]
