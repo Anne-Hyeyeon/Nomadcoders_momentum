@@ -351,3 +351,29 @@ filter함수는 화살표 함수로 만들 수 있다.
 arr.filter(item => item >2)
 
 하지만 이렇게 하면 변수의 type때문에 지우기가 안된다. type를 통일시켜줘야함. string과 number의 충돌!!!
+
+[7.0 Geolocation]
+navigator.geolocation.getCurrentPosition();
+
+현재 위치를 불러오는 마법의 코드!
+인자 1: 성공했을 때 실행될 함수
+인자 2: 실패했을 때 실행될 함수
+
+https://openweathermap.org/api
+
+api란? (노마드코더 유튜브 참고) : 다른 서버오 이야기할 수 있는 방법
+
+오늘은 openweathermap 서버와 얘기할것이다!
+
+   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+
+   fetch(url)로 url 불러오기
+   개발자도구 - 네트워크에 들어가면 과정을 볼 수 있다!
+   javascript가 fetch 이용해 대신 url 불러온 걸 볼 수 있다.
+
+화씨를 섭씨로 바꾸기 -> url에 &units=metric 붙이기
+
+promise : 당장 뭔가 일어나지 않고, 시간이 좀 걸린 뒤 일어나는 것.
+서버에 뭔가 물어봤는데 응답하는데 5분이 걸린다면? 무조건 5분을 기다려야 한다.
+그때는 then을 사용해줘야 한다.
+우리는 url fetch 뒤 response로 json을 받아야 한다.
