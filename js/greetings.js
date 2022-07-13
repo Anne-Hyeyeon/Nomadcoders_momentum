@@ -5,17 +5,17 @@ const loginInput = loginForm.querySelector("input");
 // const loginButton = loginForm.querySelector("button"); form을 입력하면 필요 없는 것!
 
 
-
 const searchForm = document.querySelector("#search-form");
 
 const logout = document.querySelector("#logout")
 
-const btnTodo = document.querySelector("#btnTodoList")
 
 const link = document.querySelector("a");
 
-const greeting = document.querySelector("#greeting")
+const greeting = document.querySelector("#greeting");
 
+
+const menutodo = document.querySelector("#menu-todo")
 
 const HIDDEN_CLASSNAME = "hidden"
 //string만 있는 변수는 대문자로 하는 관습.
@@ -66,8 +66,8 @@ function paintGreetings(username){
     greeting.classList.remove(HIDDEN_CLASSNAME);
     searchForm.classList.remove(HIDDEN_CLASSNAME);
     logout.classList.remove(HIDDEN_CLASSNAME);
-    btnTodo.classList.remove(HIDDEN_CLASSNAME);
-    greeting.innerText =  `Hello ${username}`;
+    menutodo.classList.remove(HIDDEN_CLASSNAME);
+    greeting.innerText =  `Hello ${username}!`;
 }
 
 

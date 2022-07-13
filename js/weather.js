@@ -8,12 +8,17 @@ function onGeoOk(position){
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
-        const weather = document.querySelector("#weather span:first-child");
-        const city = document.querySelector("#weather span:last-child");
+        const weather = document.querySelector("#weather .weather-first");
+        const city = document.querySelector("#weather .weather-second");
         city.innerText = data.name;
-        weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+        weather.innerText = `${data.weather[0].main}, ${data.main.temp}`;
+
+        const weathericon = document.createElement('img');
+        weathericon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+        weathericon.classList.add('bigicon');
+        document.querySelector('#weather .weather-icon').appendChild(weathericon);
     });
-    //자바스크립트가 url 불러옴
+
 
 }
 
