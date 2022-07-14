@@ -17,6 +17,8 @@ const greeting = document.querySelector("#greeting");
 
 const menutodo = document.querySelector("#menu-todo")
 
+const todotitle = document.querySelector("#exampleModalLabel")
+
 const HIDDEN_CLASSNAME = "hidden"
 //string만 있는 변수는 대문자로 하는 관습.
 
@@ -68,6 +70,9 @@ function paintGreetings(username){
     logout.classList.remove(HIDDEN_CLASSNAME);
     menutodo.classList.remove(HIDDEN_CLASSNAME);
     greeting.innerText =  `Hello ${username}!`;
+    const span = document.createElement("span");
+    span.innerText = `🥰 ${username}'s `
+    todotitle.prepend(span);
 }
 
 
@@ -104,3 +109,4 @@ if(savedUsername === null){
     paintGreetings(savedUsername);
     //localStorage로부터 받아온 이름을 paintGreeting에 전달
 }
+

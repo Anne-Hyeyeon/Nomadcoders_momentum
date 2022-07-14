@@ -43,20 +43,19 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">To do List</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="todo-box">
                     <form id="todo-form">
-                        <input required type="text" placeholder="Write a To Do and Press the Enter." />
+                        <input class="form-control transparent-input-todo" style="color:rgba(0,0,0,0.8);" required type="text" placeholder="Write a To Do and Press the Enter." />
                     </form>
                     <ul id="todo-list"></ul>
                 </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -66,9 +65,10 @@
                 <div class="text-center">
                     <div id="search-form" class="hidden row col-md-10 col-lg-8 mx-auto mb-5 text-center">
                         <div class="col">
-                            <input class="form-control form-control-lg" type="text" id="searchbox" value="" placeholder=" 검색해보세요" />
+                            <input class="form-control form-control-lg" type="text" id="searchbox" value="" placeholder="검색어를 입력하세요
+                            " style="color: rgba(0,0,0,0.8); text-align: left"; />
                         </div>   
-                        <div class="col-2"><button class="btn btn-primary">search</button></div>
+                        <div class="col-2"><button class="btn btn-warning">search</button></div>
                     </div>
                     <div id="carouselBtnCtrl" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
                         <div class="carousel-indicators">
@@ -79,26 +79,28 @@
                           <div class="carousel-item active">
                             <form class="hidden" id="login-form">
                                 <h1 class="mb-4">Welcome back!</h1>
+                                <div class="login-form-box">
                                 <input
-                                class="mb-4 form-control transparent-input"
+                                class="form-control transparent-input me-2"
                                 required 
                                 type="text" 
                                 placeholder="What is your name?"
                                 maxlength="15">
                                 <!-- html의 자체 기능을 이용해서 글자 수 검사 -->
-                                <button class="btn btn-primary">Log In</button>
+                                <button class="btn btn-warning">Log In</button>
+                                  </div>
                             </form>
-                            <h1 id="greeting" class="hidden mx-auto my-3"></h1>
-                            <div id="quote" class="h6 text-white-50 mx-auto mt-5 mb-5">
-                                <div></div>
-                                <div class="mt-2"></div>
+                            <h2 id="greeting" class="hidden mx-auto my-3"></h2>
+                            <div id="quote" class="text-white-70 mx-auto mt-5 mb-5">
+                                <div class="h4"></div>
+                                <div class="h5 mt-4"></div>
                             </div>
                           </div>
                           <div class="carousel-item">
-                            <div class="row col-md-10 col-lg-8 mx-auto mb-5 text-center">
-                                <div class="col">
-                                    <div class="h3" id="datepicker">0000.0.0</div>
-                                    <h1 id="clock">00:00:00</h1>
+                            <div class="row text-center">
+                                <div class="col mx-auto ">
+                                    <div class="clock-time" id="clock">00:00:00</div>
+                                    <div class="clock-date" id="datepicker">0000.0.0</div>
                                 </div>  
                             </div>
                           </div>
@@ -127,6 +129,5 @@
     <script src="./js/weather.js"></script>
     <script src="./js/search.js"></script>
     <script src="./js/logout.js"></script>
-    <script src="./js/btnTodo.js"></script>
 </body>
 </html>

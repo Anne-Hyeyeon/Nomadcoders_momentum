@@ -2,9 +2,12 @@ const todoForm = document.querySelector("#todo-form");
 const toDoInput = todoForm.querySelector("input");
 //const toDoInput = document.querySelector("#todo-form input")
 const todoList = document.querySelector("#todo-list");
+
 let toDos = [];
 //localStorage에 저장하기 위한 빈 배열 만들기
 const TODOS_KEY = "todos";
+
+
 
 function saveToDos(){
     localStorage.setItem("todos", JSON.stringify(toDos));
@@ -24,6 +27,7 @@ function paintToDo(newTodo){
     span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "❌";
+    button.classList.add("btn_delete")
     button.addEventListener("click", deleteTodo)
     li.appendChild(span);
     li.appendChild(button);
@@ -60,3 +64,4 @@ if(savedToDos){
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 }
+
