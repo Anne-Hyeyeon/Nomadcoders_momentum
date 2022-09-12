@@ -8,7 +8,7 @@
 
 완성작 보러가기 🔍
 
-<h3> https://withdog0603.netlify.app/](https://anne-hyeyeon.github.io/Nomadcoders_momentum/ </h3>
+<h3> https://anne-hyeyeon.github.io/Nomadcoders_momentum/ </h3>
 <br />
 
 ## ✔️ 프로젝트 개요
